@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int fibb(int n);
+
+int main()
+{
+    int x;
+    float x1;
+    if (scanf("%f", &x1) != 1) {
+        printf("n/a\n");
+    } else {
+        x = (int) x1;
+        if (x == x1) {
+            if (x > 0) {
+                printf("%d\n", fibb(x));
+            } else {
+                printf("n/a\n");
+            }
+        } else {
+            printf("n/a\n");
+        }
+    }
+    return 0;
+}
+
+int fibb(int n) {
+    if ((n == 1) || (n == 2)){
+        return 1;
+    }
+    return fibb(n-1) + fibb(n-2);
+}
+
