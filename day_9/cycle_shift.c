@@ -24,7 +24,7 @@ int input(int *a, int *n, int *k) {
     }
     for (int *p = a; p - a < *n; p++) {
         if ((p - a != *(n)-1 && (scanf("%d%c", p, &c) != 2 || c != ' ')) ||
-            (p - a == *(n)-1 && ((scanf("%d%c", p, &c) != 2 || (c != '\n' && c != EOF))))) {
+            (p - a == *(n)-1 && ((scanf("%d%c", p, &c) != 2 || c != '\n')))) {
             printf("n/a");
             return 1;
         }
