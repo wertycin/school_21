@@ -10,12 +10,11 @@ void statik(int M, int N);
 
 int main() {
     int n, m, choose;
-    char c;
-    if (scanf("%d%c", &choose, &c) != 2 || c != '\n' || choose < 1 || choose > 4) {
+    if (scanf("%d", &choose) != 1 || choose < 1 || choose > 4) {
         printf("n/a");
         return 0;
     }
-    if (scanf("%d %d%c", &n, &m, &c) != 3 || c != '\n' || n < 1 || m < 1) {
+    if (scanf("%d %d", &n, &m) != 2 || n < 1 || m < 1) {
         printf("n/a");
         return 0;
     }
@@ -87,11 +86,9 @@ void statik(int M, int N) {
 }
 
 int input(int **a, int n, int m) {
-    char c;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            if ((j != m - 1 && (scanf("%d%c", &a[i][j], &c) != 2 || c != ' ')) ||
-                (j == m - 1 && ((scanf("%d%c", &a[i][j], &c) != 2 || (c != '\n' && c != EOF))))) {
+            if (scanf("%d", &a[i][j]) != 1) {
                 printf("n/a");
                 return 1;
             }
