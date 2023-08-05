@@ -55,6 +55,7 @@ void game_start(FILE* file, int speed) {
         plato_update(plato);
         usleep(speed);
     }
+    printf("\e[1;1H\e[2J");
     print(plato);
 }
 
