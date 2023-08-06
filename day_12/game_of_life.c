@@ -33,7 +33,7 @@ void game_start(FILE* file, int speed);
 void print(int plato[HEIGHT][WIDTH]);
 void plato_update(int plato[HEIGHT][WIDTH]);
 int cell_update(int plato[HEIGHT][WIDTH], int x, int y, int old_status);
-void record_plato(int plato[HEIGHT][WIDTH], int archive[ARCH][HEIGHT][WIDTH], int *count);
+void record_plato(int plato[HEIGHT][WIDTH], int archive[ARCH][HEIGHT][WIDTH], int* count);
 int game_end(int plato[HEIGHT][WIDTH], int archive[ARCH][HEIGHT][WIDTH]);
 
 int main() {
@@ -46,7 +46,7 @@ int main() {
     };
     printf("Select file to play: ");
     scanf("%s", file_name);
-    FILE *file;
+    FILE* file;
     file = fopen(file_name, "r");
     if (file == NULL) {
         printf("Incorrect filename");
@@ -153,7 +153,7 @@ int cell_update(int plato[HEIGHT][WIDTH], int x, int y, int old_status) {
     return new_status;
 }
 
-void record_plato(int plato[HEIGHT][WIDTH], int archive[ARCH][HEIGHT][WIDTH], int *count) {
+void record_plato(int plato[HEIGHT][WIDTH], int archive[ARCH][HEIGHT][WIDTH], int* count) {
     if (*count >= ARCH) *count = 0;
     for (int i = 0; i < HEIGHT; i++) {
         for (int j = 0; j < WIDTH; j++) {
